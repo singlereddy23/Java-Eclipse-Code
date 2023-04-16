@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xmlns:aop="http://www.springframework.org/schema/aop"
+ xmlns:context="http://www.springframework.org/schema/context"
+ xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+  http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd
+  http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+  
+  <!-- Setter based DI -->  
+    
+ 	<bean id="cust" class="com.spring.bean.Customer">
+ 	
+ 	<property name="custId" value="101"></property>
+ 	
+ 	<property name="custName" value="Ravi"></property>
+ 	
+ 	<property name="orderAmt" value="6000.90"></property>
+ 	
+ 	</bean>
+ 
+ 
+  <!-- Constructor based DI -->    
+  
+  	<bean id="cust1" class="com.spring.bean.Customer">
+  	<constructor-arg value="101"></constructor-arg>
+  	<constructor-arg value="Rohan"></constructor-arg>
+  	<constructor-arg value="5000.90"></constructor-arg>
+  	
+  	</bean>
+  
+  
+  <!-- Register static factory method -->   
+  
+  <bean id="factory" class="com.spring.bean.CustomerFactory" factory-method="getCustomer"></bean>
+  
+</beans>
